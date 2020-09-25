@@ -49,7 +49,6 @@ const useStyles = makeStyles({
 
 
 const Login = (props)=>{
-  console.log(props)
   React.useEffect(()=>{
     props.importUser()
   },[])

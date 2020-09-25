@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import Login from "../components/Login"
-import {importUser,LoggingIn,setUser} from '../redux/actions'
+import {importUser,LoggingIn,setUser,importPackage} from '../redux/actions'
 
 
 const mapStateToProps = (state)=>{
@@ -16,7 +16,8 @@ const mapDispatchToProps = (dispatch)=>{
   return {
     importUser : ()=> dispatch(importUser()),
     logIn : ()=>dispatch(LoggingIn()),
-    setUser: (user)=> dispatch(setUser(user))
+    setUser: (user)=> dispatch(setUser(user)),
+ 
   }
 }
 

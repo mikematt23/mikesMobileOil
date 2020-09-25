@@ -20,6 +20,31 @@ const users = (state = [], action)=>{
       return state
   }
 }
+const level = (state = [],action)=>{
+  switch(action.type){
+    case "FETCH_PACKAGE":
+      return action.value
+    default : 
+      return state  
+  }
+}
+const month = (state = "", action)=>{
+  switch(action.type){
+    case "SET_MONTH":
+       return action.value
+    default :
+      return state    
+  }
+}
+
+const day = (state = 0,action)=>{
+  switch(action.type){
+    case "SET_DAY":
+      return action.value
+    default :
+       return state
+  }
+}
 
 const user = (state = '',action)=>{
   switch(action.type){
@@ -38,4 +63,4 @@ const loggedInUser = (state = {},action)=>{
   }
 }
 
-export default combineReducers({loggedIn, user, loggedInUser,users})
+export default combineReducers({loggedIn, user, loggedInUser,users,level,month,day})

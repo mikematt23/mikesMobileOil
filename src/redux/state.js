@@ -7,5 +7,8 @@ export default {
   loggedInUser : {
     
   },
-  users : []
+  users : [],
+  level : [],
+  month : '',
+  day : 0
 }

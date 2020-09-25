@@ -5,21 +5,20 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
   root :{
-    backgroundColor : 'red',
+    backgroundColor : "rgb(236,225,90)",
     height : "100vh"
   }
 })
 
 const Info = (props)=>{
   const classes = useStyles();
-  console.log(props)
   return (
-    <Container>
+    <div  className ={classes.root}>
       <Nav/>
-      <div className ={classes.root}>
+      <div>
         <h1>here</h1>
       </div>
-    </Container>
+    </div>
   )
 }
 

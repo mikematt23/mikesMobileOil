@@ -3,8 +3,9 @@ import { Switch, Route, Redirect } from 'react-router'
 import Login from './containers/Login'
 import Info from "./containers/info"
 import User from "./containers/User"
-import SignUp from "./components/Sign-up"
-import Profile from "./components/Profile"
+import SignUp from "./containers/Sign-up"
+import SelectedDay from "./containers/SelectedDay"
+import Profile from "./containers/Profile"
 import cookie from 'cookie'
 
 
@@ -26,8 +27,6 @@ const ProtectedRoute = ({component: Component, ...rest}) => {
 }
 
 const Router = (props)=>{
-
-  console.log(props)
   return(
     <Switch>
       <Route path = '/' exact component ={Login}/>
@@ -35,6 +34,7 @@ const Router = (props)=>{
       <Route  path = "/signUp" component ={SignUp} />
       <ProtectedRoute path = '/user' component={User} />
       <ProtectedRoute path = "/profile" component ={Profile} />
+      <ProtectedRoute path = "/day/:day" component ={SelectedDay}  />
     </Switch>
   )
 }
