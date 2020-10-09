@@ -77,7 +77,7 @@ const Login = (props)=>{
         props.setUser(user)
         props.logIn()
         console.log(props.loggedInUser)
-        document.cookie = 'loggedIn=true;max-age=60*1000'
+        document.cookie = 'loggedIn=true;max-age=60*(60*1000)'
         return name
       }else{
         console.log('no user')

@@ -6,6 +6,7 @@ import {
   Button 
 } from "@material-ui/core"
 import { makeStyles } from '@material-ui/core/styles'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   root :{
@@ -38,6 +39,8 @@ const SignUp = (props)=>{
   const [lastName,setLastName] = useState('')
   const [email,setEmail] = useState('')
   const [address,setAddress] = useState('')
+  const [town, setTown] = useState('')
+  const [state, setState] = useState('')
   const [message,setMessage] = useState()
 
   const handlePassword = (event)=>{
@@ -58,23 +61,27 @@ const SignUp = (props)=>{
   const handleAddress = (event)=>{
     setAddress(event.target.value)
   }
-
+  const handleTown = (event)=>{
+    setTown(event.target.value)
+  }
+  const handleState = (event)=>{
+    setState(event.target.value)
+  } 
+  
   const handleSubmit = (e)=>{
-    props.users.find((user)=>{
+    let date = "Na"
+    props.users.every((user)=>{
       console.log(user)
        if(user.email === email){
          console.log("already a user")
-          return setMessage("already a user")
+           setMessage("already a user")
        }else if(user.email != email && password === confirm){
-         console.log("new user")
-         setMessage("new user")
          if(firstName != ""&& lastName != ""&& address != ""){
            console.log("input filled out")
-           let url = ''
-           fetch(url,{method : "POST"})
-         }else{
-           console.log("feilds not filled out")
-         }
+           let url = `http://localhost:5000/createCustomer/${firstName}/${lastName}/${email}/${password}/${address}/${town}/${state}/${date}`
+           console.log(url)
+           fetch(url,{method : "POST"})  
+          }
        }else{
         console.log("password doesnt match")
         setMessage("Password Doesnt Match")
@@ -96,8 +103,14 @@ const SignUp = (props)=>{
             <TextField onChange = {handleEmail}  placeholder = "E-mail" ></TextField>
             <TextField onChange = {handlePassword}  placeholder = "Password"></TextField>
             <TextField onChange = {handleConfirm}  placeholder = "Confirm Password"></TextField>
-            <TextField onChange = {handleAddress}  placeholder = "address"></TextField>
-            <Button onClick = {handleSubmit}>SUBMIT</Button>
+            <TextField onChange = {handleAddress}  placeholder = " Street Address"></TextField>
+            <TextField onChange = {handleTown} placeholder = "Town"></TextField>
+            <TextField onChange = {handleState} placeholder = "State"></TextField>
+            <Link to = '/'>
+              <Button onClick = {handleSubmit}>SUBMIT</Button>
+            </Link>
+              
+      
           </Container>
         </div>
       </div>
