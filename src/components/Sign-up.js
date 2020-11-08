@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   root :{
-    backgroundColor : "rgb(236,225,90)",
+    backgroundColor : "rgb(44,204,235)",
     height : "100vh",
     display : "flex",
     justifyContent : 'center',
@@ -18,15 +18,24 @@ const useStyles = makeStyles({
   },
   root2: {
     height : "70vh",
-    width : "60%",
-    backgroundColor :"white"
+    width : "45%",
+    backgroundColor :"white",
+    borderRadius:"5%",
+    backgroundImage : "url(https://cdn4.vectorstock.com/i/1000x1000/43/18/water-splash-vector-1294318.jpg)",
+    backgroundRepeat : "no-repeat",
+  
   },
   Container:{
     display : "flex",
     flexDirection :"column",
     alignItems: 'center',
     justifyContent : 'center'
-  }
+  },
+  button:{
+    backgroundColor:"rgb(245,0,87)",
+    color:" rgb(44,204,235)",
+    marginTop:"2%"
+  },
 })
 
 
@@ -71,19 +80,15 @@ const SignUp = (props)=>{
   const handleSubmit = (e)=>{
     let date = "Na"
     props.users.every((user)=>{
-      console.log(user)
        if(user.email === email){
-         console.log("already a user")
            setMessage("already a user")
        }else if(user.email != email && password === confirm){
          if(firstName != ""&& lastName != ""&& address != ""){
-           console.log("input filled out")
            let url = `http://localhost:5000/createCustomer/${firstName}/${lastName}/${email}/${password}/${address}/${town}/${state}/${date}`
-           console.log(url)
-           fetch(url,{method : "POST"})  
+           fetch(url,{method : "POST"})
+           setMessage("User Created! Please Log In TO Continue")  
           }
        }else{
-        console.log("password doesnt match")
         setMessage("Password Doesnt Match")
        }
     })
@@ -106,11 +111,7 @@ const SignUp = (props)=>{
             <TextField onChange = {handleAddress}  placeholder = " Street Address"></TextField>
             <TextField onChange = {handleTown} placeholder = "Town"></TextField>
             <TextField onChange = {handleState} placeholder = "State"></TextField>
-            <Link to = '/'>
-              <Button onClick = {handleSubmit}>SUBMIT</Button>
-            </Link>
-              
-      
+              <Button className={classes.button} onClick = {handleSubmit}>SUBMIT</Button>
           </Container>
         </div>
       </div>

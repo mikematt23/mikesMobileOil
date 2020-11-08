@@ -32,7 +32,7 @@ const useStyles = makeStyles({
     flexDirection : "column",
     alignItems : "center",
     justifyContent : "center",
-    backgroundColor: "rgb(236,225,90)"
+    backgroundColor: "rgb(44,204,235)"
   
   }
 });

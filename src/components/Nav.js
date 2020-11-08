@@ -12,7 +12,7 @@ const useStyles = makeStyles({
      justifyContent: "space-evenly"
    },
    Link: {
-     color : "Black"
+     color : "rgb(245,0,87)"
    },
    navBar:{
      backgroundColor: "white",
@@ -22,6 +22,7 @@ const useStyles = makeStyles({
 
 const Nav = (props)=>{
   const handleLogOut = ()=>{
+    document.cookie = 'loggedIn=false;max-age= 60*1000'
     props.logOut()
   }
   const classes = useStyles();

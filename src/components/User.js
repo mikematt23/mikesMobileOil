@@ -12,13 +12,16 @@ const useStyles = makeStyles({
     display : "flex",
     alignItems : "center",
     justifyContent :"center",
-    backgroundColor : "rgb(236,225,90)",
+    backgroundColor : "rgb(44,204,235)",
     height : "100vh"
   },
   root2:{
     backgroundColor : 'white',
-    height : "80%",
-    width:"70%"
+    height : "75%",
+    width:"45%",
+    borderRadius:"5%",
+    backgroundImage : "url(https://cdn4.vectorstock.com/i/1000x1000/43/18/water-splash-vector-1294318.jpg)",
+    backgroundRepeat : "no-repeat",
   },
   div : {
     height : "100%"
@@ -35,6 +38,9 @@ const useStyles = makeStyles({
     border : "solid 1px black",
     height :"60%",
     width : "60%"
+  },
+  button:{
+    color:"rgb(245,0,87)"
   }
 })
 
