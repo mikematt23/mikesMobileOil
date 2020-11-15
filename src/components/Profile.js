@@ -9,13 +9,34 @@ const useStyles = makeStyles({
     height : "100vh",
     display : "flex",
     justifyContent : 'center',
-    alignItems: "center"
+    alignItems: "center",
+    
   },
   root2: {
-    height : "70vh",
+    height : "90vh",
     width : "45%",
     backgroundColor :"white",
-    borderRadius:"5%"
+    borderRadius:"5%",
+    backgroundImage : "url(https://cdn4.vectorstock.com/i/1000x1000/43/18/water-splash-vector-1294318.jpg)",
+    backgroundRepeat : "no-repeat",
+    display:"flex",
+    flexDirection:'column',
+    marginTop:"2%"
+  },
+  button:{
+    backgroundColor:"rgb(245,0,87)",
+    color:" rgb(44,204,235)",
+    marginLeft:"4%",
+    marginTop:"2%"
+  },
+  flexMenu :{
+    display:"flex",
+    flexDirection:'column',
+    justifyContent : 'center',
+    alignItems: "center",
+  },
+  h1:{
+    color:"rgb(245,0,87)"
   }
 })
 
@@ -72,7 +93,7 @@ const Profile = (props)=>{
    if(address === "" || town === "" || state === ""){
      setMessage("All Fields Must Be Filled Out")
    }else{
-     let url = `http://localhost:5000/updateAddress/${userID}/${address}/${town}/${state}`
+     let url = `https://aca-final-project.uc.r.appspot.com/updateAddress/${userID}/${address}/${town}/${state}`
      fetch(url,{method:"PUT"})
      setMessage("address Changed")
    }
@@ -82,7 +103,7 @@ const Profile = (props)=>{
    if(password != confirmPassword){
      setMessage2("Password Doesn't match")
    }else{
-     let url =`http://localhost:5000/updatePassword/${userID}/${password}`
+     let url =`https://aca-final-project.uc.r.appspot.com/updatePassword/${userID}/${password}`
      setMessage2("Password Changed")
      fetch(url,{method:"PUT"})
    }
@@ -97,9 +118,9 @@ const Profile = (props)=>{
            <div className = {classes.root2}>
              <h1> Welcome Back {props.loggedInUser.firstName}</h1>
              <Container>
-               <h2>Please Enter Your Password To Continue</h2>
+               <h2 className = {classes.h1}>Please Enter Your Password To Continue</h2>
                <TextField onChange = {checkPassword}/>
-               <Button onClick = {passwordMenu}>Check Password</Button>
+               <Button className ={classes.button} onClick = {passwordMenu}>Check Password</Button>
                <h6>{message}</h6>
              </Container>
            </div>
@@ -114,22 +135,22 @@ const Profile = (props)=>{
          <div className = {classes.root}>
            <div className = {classes.root2}>
              <h1> Welcome Back {props.loggedInUser.firstName}</h1>
-             <Container>
-               <Container>
+             <Container className = {classes.flexMenu}>
+               <Container className ={classes.flexMenu}>
                  <h3>Your Address: {props.loggedInUser.address}</h3>
                  <TextField placeholder = "Address" onChange = {captureAddress}/>
                  <TextField placeholder = "Town" onChange = {captureTown}/>
                  <TextField placeholder = "State" onChange = {captureState} />
-                 <Button onClick = {submitAddressChange} >Submit</Button>
+                 <Button className ={classes.button} onClick = {submitAddressChange} >Submit</Button>
                  <h6>{message}</h6>
                </Container>
-               <Button onClick = {componentReturn}>CLose</Button>
+               <Button className ={classes.button} onClick = {componentReturn}>CLose</Button>
              </Container>
-             <Container>
+             <Container className = {classes.flexMenu}>
                <h2>Please Enter Your New Password</h2>
                <TextField onChange = {capturePassword}/>
                <TextField onChange = {captureConfirm}/>
-               <Button>Check Password</Button>
+               <Button className={classes.button} >Check Password</Button>
                <h6>{message2}</h6>
              </Container>
            </div>
@@ -144,17 +165,17 @@ const Profile = (props)=>{
          <div className = {classes.root}>
            <div className = {classes.root2}>
              <h1> Welcome Back {props.loggedInUser.firstName}</h1>
-             <Container>
-               <Container>
+             <Container className = {classes.flexMenu}>
+               <Container className = {classes.flexMenu}>
                  <h2>Click To Change Address</h2>
-                 <Button onClick = {componentReturn}>OPEN</Button>
+                 <Button className={classes.button}  onClick = {componentReturn}>OPEN</Button>
                </Container>
              </Container>
-             <Container>
+             <Container className={classes.flexMenu}>
                <h2>Please Enter Your New Password</h2>
                <TextField onChange = {capturePassword}/>
                <TextField onChange = {captureConfirm}/>
-               <Button onClick ={submitPasswordChange}  >Check Password</Button>
+               <Button className={classes.button} onClick ={submitPasswordChange}  >Check Password</Button>
                <h6>{message2}</h6>
              </Container>
            </div>

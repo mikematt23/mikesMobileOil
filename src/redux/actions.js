@@ -6,7 +6,7 @@
 }
 export const importUser = ()=>{
   return (dispatch)=>{
-    fetch('http://localhost:5000/users')
+    fetch('https://aca-final-project.uc.r.appspot.com/users')
     .then((res)=>{
       return res.json()
     }) .then((data)=>{
@@ -22,7 +22,7 @@ const Package = (level)=>{
 }
 export const importPackage = ()=>{
   return(dispatch)=>{
-    fetch('http://localhost:5000/package')
+    fetch('https://aca-final-project.uc.r.appspot.com/package')
     .then((response)=>{
       return response.json()
     },)
