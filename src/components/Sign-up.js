@@ -84,7 +84,7 @@ const SignUp = (props)=>{
            setMessage("already a user")
        }else if(user.email != email && password === confirm){
          if(firstName != ""&& lastName != ""&& address != ""){
-           let url = `https://aca-final-project-front-end.herokuapp.com/createCustomer/${firstName}/${lastName}/${email}/${password}/${address}/${town}/${state}/${date}`
+           let url = `https://aca-final-project.uc.r.appspot.com/createCustomer/${firstName}/${lastName}/${email}/${password}/${address}/${town}/${state}/${date}`
            fetch(url,{method : "POST"})
            setMessage("User Created! Please Log In TO Continue")  
           }
