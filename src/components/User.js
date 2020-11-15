@@ -53,7 +53,7 @@ const classes = useStyles()
   <div className = {classes.root}>
     <Nav/>
     <div className = {classes.root2}>
-       Hello {props.loggedInUser.firstName}
+       <h4>Hello {props.loggedInUser.firstName}</h4>
           <div>
           <BasicDatePicker/>
           </div>  
