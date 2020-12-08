@@ -6,7 +6,7 @@
 }
 export const importUser = ()=>{
   return (dispatch)=>{
-    fetch('https://aca-final-project.uc.r.appspot.com/users')
+    fetch('https://aca-michaels-backend-server.herokuapp.com/users')
     .then((res)=>{
       return res.json()
     }) .then((data)=>{
@@ -22,7 +22,7 @@ const Package = (level)=>{
 }
 export const importPackage = ()=>{
   return(dispatch)=>{
-    fetch('https://aca-final-project.uc.r.appspot.com/package')
+    fetch('https://aca-michaels-backend-server.herokuapp.com/package')
     .then((response)=>{
       return response.json()
     },)
