@@ -47,6 +47,9 @@ const useStyles = makeStyles({
   },
   div4:{
     width:"50%"
+  },
+  h3:{
+    color : "rgb(245,0,87)"
   }
 });
 

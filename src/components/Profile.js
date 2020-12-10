@@ -148,9 +148,9 @@ const Profile = (props)=>{
              </Container>
              <Container className = {classes.flexMenu}>
                <h2>Please Enter Your New Password</h2>
-               <TextField onChange = {capturePassword}/>
-               <TextField onChange = {captureConfirm}/>
-               <Button className={classes.button} >Check Password</Button>
+               <TextField type ="password" onChange = {capturePassword}/>
+               <TextField type ="password" onChange = {captureConfirm}/>
+               <Button className={classes.button} onClick ={submitPasswordChange}>Change Password</Button>
                <h6>{message2}</h6>
              </Container>
            </div>
@@ -173,8 +173,8 @@ const Profile = (props)=>{
              </Container>
              <Container className={classes.flexMenu}>
                <h2>Please Enter Your New Password</h2>
-               <TextField onChange = {capturePassword}/>
-               <TextField onChange = {captureConfirm}/>
+               <TextField type ="password" onChange = {capturePassword}/>
+               <TextField type ="password" onChange = {captureConfirm}/>
                <Button className={classes.button} onClick ={submitPasswordChange}  >Check Password</Button>
                <h6>{message2}</h6>
              </Container>

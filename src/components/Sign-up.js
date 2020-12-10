@@ -106,8 +106,8 @@ const SignUp = (props)=>{
             <TextField onChange = {handleFirstName}  placeholder = "First Name"></TextField>
             <TextField onChange = {handleLastName}  placeholder = "Last Name" ></TextField>
             <TextField onChange = {handleEmail}  placeholder = "E-mail" ></TextField>
-            <TextField onChange = {handlePassword}  placeholder = "Password"></TextField>
-            <TextField onChange = {handleConfirm}  placeholder = "Confirm Password"></TextField>
+            <TextField type = 'password' onChange = {handlePassword}  placeholder = "Password"></TextField>
+            <TextField type = 'password' onChange = {handleConfirm}  placeholder = "Confirm Password"></TextField>
             <TextField onChange = {handleAddress}  placeholder = " Street Address"></TextField>
             <TextField onChange = {handleTown} placeholder = "Town"></TextField>
             <TextField onChange = {handleState} placeholder = "State"></TextField>
