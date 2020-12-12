@@ -119,7 +119,7 @@ const Profile = (props)=>{
              <h1> Welcome Back {props.loggedInUser.firstName}</h1>
              <Container>
                <h2 className = {classes.h1}>Please Enter Your Password To Continue</h2>
-               <TextField onChange = {checkPassword}/>
+               <TextField type ="password" onChange = {checkPassword}/>
                <Button className ={classes.button} onClick = {passwordMenu}>Check Password</Button>
                <h6>{message}</h6>
              </Container>
@@ -175,7 +175,7 @@ const Profile = (props)=>{
                <h2>Please Enter Your New Password</h2>
                <TextField type ="password" onChange = {capturePassword}/>
                <TextField type ="password" onChange = {captureConfirm}/>
-               <Button className={classes.button} onClick ={submitPasswordChange}  >Check Password</Button>
+               <Button className={classes.button} onClick ={submitPasswordChange}  >Change Password</Button>
                <h6>{message2}</h6>
              </Container>
            </div>

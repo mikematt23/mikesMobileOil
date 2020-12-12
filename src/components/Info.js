@@ -60,13 +60,13 @@ const Info = (props)=>{
         <Nav/>
          <div className ={classes.div2}>
            <div className={classes.div} >
-            <h3>WHAT W WE DO?</h3>
+            <h3 className = {classes.h3}>WHAT WE DO?</h3>
             <div className ={classes.div4}>
              <h4>We clean Cars! Does your car look as if it has just been 
-               unearthed or gone thru the Baja 1000? Is your interior ground zero for new life? Then let us help wether you have a 
+               unearthed or gone thru the Baja 1000? Is your interior ground zero for new life? Then let us help weather you have a 
                special occation or just need a clean we will make sure your ridin in style!</h4>
             </div>
-            <h3>Our Packages</h3>
+            <h3 className = {classes.h3}>Our Packages</h3>
             <div className = {classes.div3}>
               <h4>We have 3 diffrent levels that you can choose from. Basic, Advanced and priimum</h4>
               <h3>Basic Will Include</h3>
@@ -74,15 +74,15 @@ const Info = (props)=>{
                   <li>An extiorer Car wash</li>
                   <li>interior clean</li>
               </ul>
-              <h3>Advanced Will Include</h3>
+              <h3 >Advanced Will Include</h3>
               <ul>
                 <li>Basic + Rims Cleaned</li>
-                <li>Interoir vacuumed</li>
+                <li>Interior vacuumed</li>
               </ul>
               <h3>Premium Will Include</h3>
               <ul>
                 <li>Advanced + extiorer buffed</li>
-                <li>interior Shampooed</li>
+                <li>Interior Shampooed</li>
               </ul>
             </div>
           </div>
