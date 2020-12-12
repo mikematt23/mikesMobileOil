@@ -89,7 +89,7 @@ const Login = (props)=>{
         name = user.firstName
         props.setUser(user)
         props.logIn()
-        document.cookie = 'loggedIn=true;max-age=60*1000' 
+        document.cookie = 'loggedIn=true;max-age=10*(60*1000)' 
       } else if(user.email != payload){
          setMessage("No User")
       }
