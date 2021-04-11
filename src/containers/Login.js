@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch)=>{
     importUser : ()=> dispatch(importUser()),
     logIn : ()=>dispatch(LoggingIn()),
     setUser: (user)=> dispatch(setUser(user)),
- 
+     
   }
 }
 
